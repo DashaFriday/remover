@@ -1,8 +1,11 @@
+import datetime
 import re
+
+now = str(datetime.datetime.now())[:16].replace(':', '-').replace(' ', '_')
 
 # Объявление имён файлов для работы
 source_file = input('Введите файл для проверки: ')
-result_file = 'result.txt'
+result_file = 'result_' + now + '.txt'
 
 # Отрываем файл для записи
 with open(result_file, 'w') as out_file:

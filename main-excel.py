@@ -1,5 +1,8 @@
+import datetime
 import re
 import openpyxl as op
+
+now = str(datetime.datetime.now())[:16].replace(':', '-').replace(' ', '_')
 
 # Создание файла для результата
 # result_file = op.Workbook()
@@ -60,6 +63,7 @@ while str(sheet[j].value) != "None":
 # result_file.save('result_file.xlsx')
 # result_file.close()
 
-# Сохранение изменений в файле, закрытие файла
+# Сохранение изменений в файле, закрытие файла (+ возможность сохранять новый файл с добавлением времени)
+# source_file.save(name_of_source_file[:4] + '_' + now + '.xlsx')
 source_file.save(name_of_source_file)
 source_file.close()
